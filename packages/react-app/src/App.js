@@ -3,12 +3,15 @@ import { Contract } from "@ethersproject/contracts";
 import { getDefaultProvider } from "@ethersproject/providers";
 import { useQuery } from "@apollo/react-hooks";
 
+// import { Body, Button, Header, Image, Link } from "./components";
 import { Body, Button, Header, Image, Link } from "./components";
+import Bar from "./components/Bar";
 import logo from "./ethereumLogo.png";
 import useWeb3Modal from "./hooks/useWeb3Modal";
 
 import { addresses, abis } from "@project/contracts";
 import GET_TRANSFERS from "./graphql/subgraph";
+// import Header from "./components/Header";
 
 async function readOnChainData() {
   // Should replace with the end-user wallet, e.g. Metamask
@@ -53,6 +56,7 @@ function App() {
         <WalletButton provider={provider} loadWeb3Modal={loadWeb3Modal} logoutOfWeb3Modal={logoutOfWeb3Modal} />
       </Header>
       <Body>
+        <Bar>Yeti Bridge</Bar>
         <Image src={logo} alt="react-logo" />
         <p>
           Edit <code>packages/react-app/src/App.js</code> and save to reload.
